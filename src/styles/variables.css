@@ -1,3 +1,16 @@
 :root {
-   
+  --fonts-settings: "Roboto", sans-serif;
+  --main-background-color: linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 1) 100%,
+    rgba(9, 9, 121, 0.9906556372549019) 100%,
+    rgba(109, 0, 255, 1) 100%
+  );
+  --items-color: #1e90ff;
+  --text-color: #ffffff;
+  --outline-color: rgba(109, 0, 255, 1);
+  --disabled-text-color: rgba(255, 255, 255, 0.5);
+  --second-background-color: rgba(255, 255, 255, 0.1);
+  --complete-color: #008000;
+  --delete-color: red;
 }

@@ -1,12 +1,15 @@
 // Импорты
+// imports
 import { completeCase, deleteCase } from "./casesList.js";
 import { addToLocalStorage } from "./localstorege.js";
 
-// Массив с активным делами
+// Массивы с активным делами
+// Arrays with active cases
 export const activeCasesList = [];
 export const completedCasesList = [];
 
 // Функция переключения состояния кнопки в форме
+// Function for switching the state of a button in the form
 export const toggleButtonState = (formTodoButton, inputValue) => {
   if (inputValue) {
     formTodoButton.disabled = false;
@@ -16,17 +19,20 @@ export const toggleButtonState = (formTodoButton, inputValue) => {
 };
 
 // Функция работы с инпутом формы
+// Function for working with form input
 export const checkInput = (event, formTodoButton) => {
   const inputValue = event.target.value;
   toggleButtonState(formTodoButton, inputValue);
 };
 
 // Функция добавления дела в список дел
+// Function of adding a todo to the todo list
 export const addToTodoList = (todoObj) => {
   const templateContent = document.querySelector("#active-case-id").content;
   const activeCases = document.querySelector(".active-cases");
 
   // Проверка на дублирование
+  // Check for duplication
   if (!activeCasesList.find((item) => item.id === todoObj.id)) {
     activeCasesList.push(todoObj);
     const newTodoItem = templateContent.cloneNode(true).firstElementChild;
@@ -40,17 +46,16 @@ export const addToTodoList = (todoObj) => {
 
     completeButton.addEventListener("click", (event) => {
       completeCase(event, newTodoItem, todoObj.id);
-      console.log(todoObj.id);
     });
 
     deleteButton.addEventListener("click", (event) => {
       deleteCase(event, newTodoItem, todoObj.id);
-      console.log(todoObj.id);
     });
   }
 };
 
 // Функция создания объекта дела
+// Function for creating a case object
 export const createTodoObj = (text, formInput, formTodoButton) => {
   const todoObj = {
     id: Date.now(),
@@ -63,6 +68,7 @@ export const createTodoObj = (text, formInput, formTodoButton) => {
 };
 
 // Функция добавления значения в список активных дел
+// Function for adding a value to the active to-do list
 export const onSubmit = (event, formInput, formTodoButton) => {
   event.preventDefault();
   const inputValue = formInput.value.trim();

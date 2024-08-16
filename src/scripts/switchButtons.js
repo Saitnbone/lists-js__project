@@ -1,4 +1,5 @@
-// Функции для работы с переключением списков 
+// Функции для работы с переключением списков
+// Functions for working with list switching
 export const switchButton = (switchButtons, event) => {
   const active = document.querySelector("#active");
   const completed = document.querySelector("#completed");
@@ -17,7 +18,8 @@ export const switchButton = (switchButtons, event) => {
   }
 };
 
-
+// Функция для переключения рендеринга списков
+// Function to toggle list rendering
 export const renderLists = (displayList, hiddenList) => {
   displayList.classList.remove("cases-list_disabled");
   hiddenList.classList.add("cases-list_disabled");
