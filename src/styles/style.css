@@ -1,0 +1,308 @@
+/* Общие стили для приложения */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0 auto;
+  padding: 0;
+  block-size: 100%;
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  inline-size: 100%;
+  block-size: 100vh;
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 1) 100%,
+    rgba(9, 9, 121, 0.9906556372549019) 100%,
+    rgba(109, 0, 255, 1) 100%
+  );
+  z-index: -1;
+}
+
+.page {
+  max-inline-size: 1600px;
+  min-inline-size: 375px;
+  min-block-size: 100vh;
+  margin: auto;
+  color: white;
+  font-family: "Roboto", sans-serif;
+  font-size: 18px;
+}
+
+/* background-color: #020024; */
+
+h1,
+h2,
+h3,
+h4,
+p,
+ul,
+ol,
+li,
+blockquote,
+fieldset {
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #1e90ff;
+}
+
+.container {
+  padding: 30px 40px;
+}
+
+.logo {
+  background-color: #1e90ff;
+  padding: 7px;
+  border-radius: 5px;
+  color: white;
+  block-size: 34px;
+}
+
+.logo:hover {
+  cursor: pointer;
+}
+
+.logo a {
+  color: white;
+}
+
+.button:hover {
+  cursor: pointer;
+}
+
+/* Настройки для блока header */
+/* Settings for the header block */
+
+.header {
+  display: flex;
+  padding: 60px 30px;
+}
+
+/* Настройки для блока main */
+/* Settings for the main block */
+.main-title {
+  font-size: clamp(2.375rem, 2.1454rem + 0.9796vw, 3.125rem);
+}
+
+/* Стили для секции с формой  */
+/* Styles for the form section */
+.form-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+.form-block {
+  display: flex;
+  justify-content: center;
+  padding: 0 30px;
+  align-items: center;
+  max-inline-size: 515px;
+  block-size: 250px;
+  border: solid 1px black;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.form-todo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  padding: 10px;
+}
+
+.label {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  font-size: 24px;
+}
+
+.form-todo__input {
+  font-size: 20px;
+  font-weight: bold;
+  inline-size: 350px;
+  block-size: 50px;
+  border-radius: 15px;
+  background: rgba(255, 255, 255, 0.8);
+  border: none;
+}
+
+.form-todo__input::placeholder {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.form-todo__input:focus {
+  font-size: 20px;
+  font-weight: bold;
+  outline: 1px solid rgba(109, 0, 255, 1);
+  background: rgba(255, 255, 255);
+  border: 1px solid black;
+}
+
+.form-todo__button {
+  inline-size: 190px;
+  block-size: 40px;
+  font-size: 20px;
+  color: white;
+  background-color: #1e90ff;
+  border: none;
+  border-radius: 10px;
+}
+
+.form-todo__button:hover {
+  opacity: 0.7;
+}
+
+.form-todo__button:disabled {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.5);
+  user-select: none;
+  cursor: auto;
+  opacity: 1;
+}
+
+/* Стили для секции контента */
+/* Styles for the content section */
+.content-section {
+  margin-block-start: 90px;
+}
+
+.switch-block {
+  display: flex;
+  gap: 20px;
+}
+
+.switch-block__element {
+  font-size: clamp(1.25rem, 1.1735rem + 0.3265vw, 1.5rem);
+}
+
+.switch-block__element:hover {
+  color: #1e90ff;
+  cursor: pointer;
+}
+
+.switch_active {
+  border-bottom: 2px solid white;
+}
+
+.active:hover {
+  border-bottom: 2px solid #1e90ff;
+}
+
+.content-block {
+  margin-block-start: 50px;
+}
+
+.cases {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.cases-list_disabled {
+  display: none;
+}
+
+.case-title {
+  font-size: clamp(1.25rem, 1.0969rem + 0.6531vw, 1.75rem);
+}
+
+.list-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 30px;
+  background: rgba(255, 255, 255, 0.1);
+  max-inline-size: 650px;
+  min-block-size: 70px;
+  border-radius: 10px;
+}
+
+.active-case__buttons-block {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.complete-button {
+  background: none;
+  border: none;
+}
+
+.icon-complete {
+  color: #ffffff;
+  transition: color 0.3s;
+}
+
+.icon-complete:hover {
+  cursor: pointer;
+  color: #008000;
+}
+
+.delete-button {
+  background: none;
+  border: none;
+}
+
+.icon-delete {
+  color: #ffffff;
+  transition: color 0.3s;
+}
+
+.icon-delete:hover {
+  cursor: pointer;
+  color: #ff0000;
+}
+
+/* Настройки для блока footer */
+/* Settings for the footer block */
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.socials {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.social-link {
+  font-size: clamp(0.75rem, 0.6735rem + 0.3265vw, 1rem);
+}
+
+/* Медиазапросы */
+@media (width <= 450px) {
+  .footer {
+    display: flex;
+    flex-direction: column;
+  }
+}

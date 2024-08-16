@@ -1,0 +1,13 @@
+{
+  "name": "project__js-todo-list",
+  "version": "1.0.0",
+  "description": "Написать простое веб-приложение на JavaScript, которое отображает список задач (To-Do List). Приложение должно позволять добавлять новые задачи, помечать задачи как выполненные и удалять задачи.",
+  "main": "index.js",
+   "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

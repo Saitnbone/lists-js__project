@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles/style.css" />
+    <link rel="stylesheet" href="./styles/variables.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <title>To-Do деловых людей</title>
+  </head>
+  <body class="page">
+    <header class="container header">
+      <span class="logo"><a href="https://github.com/Saitnbone" target="_blank" rel="noopener noreferrer">TODO List</a></span>
+    </header>
+    <main class="container main">
+      <section class="form-section">
+        <h1 class="main-title">To-Do для деловых людей!</h1>
+        <div class="form-block">
+          <form class="form-todo">
+            <label class="label" for="todo-title">Название дела
+              <input class="form-todo__input"  id="todo-title" type="text" placeholder="Новое дело" />
+            </label>
+            <button type="submit" class="button form-todo__button" disabled>Добавить дело</button>
+          </form>
+        </div>
+      </section>
+      <section class="content-section">
+        <div class="switch-block">
+          <span id="active" class="switch_active switch-block__element">Активные</span>
+          <span id="completed" class="switch-block__element">Завершенные</span>
+        </div>
+        <div class="content-block">
+          <!-- Список активных дел -->
+          <ul class="cases active-cases"></ul>
+
+          <!-- Список завершенных дел -->
+          <ul class="cases cases-list_disabled completed-cases"></ul>
+      </section>
+    </main>
+    <footer class="container footer">
+      <span class="logo">TODO List</span>
+      <div>
+        <h3>Контакты</h3>
+        <ul class="socials">
+          <li class="social-link">
+            <a href="mailto:golodinaleksandr@gmail.com"
+              >golodinaleksandr@gmail.com</a
+            >
+          </li>
+          <li>
+            <a
+            class="social-link"
+              href="https://github.com/Saitnbone"
+              target="_blank"
+              rel="noopener noreferrer"
+              >https://github.com/Saitnbone</a
+            >
+          </li>
+        </ul>
+      </div>
+    </footer>
+    <script type="module" src="./index.js"></script>
+    
+    <!-- Шаблон для активного дела -->
+    <template id="active-case-id">
+      <li class="list-item active-case">
+        <h3 class="case-title"></h3>
+        <div class="active-case__buttons-block">
+          <button class="complete-button">
+            <svg class="icon-complete" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0,0,256,256" width="30" height="25">
+              <g fill="currentColor" fill-rule="nonzero" stroke="none" stroke-width="2" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal">
+                <g transform="scale(4,4)">
+                  <path d="M55.211,14.629l-29.086,29.086l-17.336,-17.336l-2.828,2.828l20.164,20.164l31.914,-31.914z"></path>
+                </g>
+              </g>
+            </svg>
+          </button>
+          <button class="delete-button">
+            <svg class="icon-delete" width="18" height="17" viewBox="0 0 18 17" xmlns="http://www.w3.org/2000/svg">
+              <rect y="16.2637" width="23" height="2" transform="rotate(-45 0 16.2637)" fill="currentColor"/>
+              <rect x="1" width="23" height="2" transform="rotate(45 1 0)" fill="currentColor"/>
+            </svg>
+          </button>
+
+        </div>
+      </li>
+    </template>
+
+    <!-- Шаблон для завершенного дела -->
+    <template id="completed-case-id">
+      <li class="list-item completed-case">
+        <h3 class="case-title"></h3>
+        <button class="delete-button">
+          <svg class="icon-delete" width="18" height="17" viewBox="0 0 18 17" xmlns="http://www.w3.org/2000/svg">
+            <rect y="16.2637" width="23" height="2" transform="rotate(-45 0 16.2637)" fill="currentColor"/>
+            <rect x="1" width="23" height="2" transform="rotate(45 1 0)" fill="currentColor"/>
+          </svg>
+        </button>
+      </li>
+    </template>
+
+  </body>
+</html>
